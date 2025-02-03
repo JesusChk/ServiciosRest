@@ -1,0 +1,138 @@
+h1 {
+	text-align: center;
+	font-size: 75px;
+}
+
+h2 {
+	text-align: center;
+	font-size: 50px;
+}
+
+h3 {
+	text-align: center;
+	font-size: 35px;
+}
+
+caption {
+	text-align: center;
+	font-size: 25px;
+	padding: 10px;
+}
+
+
+form {
+	text-align: center;
+}
+
+input[type="submit"] {
+    background-color: transparent;
+    color: black;
+    border: 1px solid black;
+    padding: 5px 15px;
+    font-size: 16px;
+    cursor: pointer;
+	margin: 10px;
+}
+
+input[type="submit"]:hover {
+    background-color: black;
+    color: white;
+}
+
+#boton {
+	width: 80px;
+	height: 30px;
+	margin: 20px
+}
+
+#pIndex {
+	text-align: center;
+	font-size: 30px;
+}
+
+#divA {
+	text-align: center;
+	font-size: 2em;
+}
+
+.divLinks {
+	margin: 20px;
+	text-align: center;
+}
+
+
+.error {
+	text-align: center;
+	color: red;
+	font-size: 20px;
+	margin: 10px;
+	padding: 10px;
+}
+
+/* Estilo general para la tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    text-align: left;
+}
+
+/* Bordes de la tabla */
+table, th, td {
+    border: 1px solid #dddddd;
+}
+
+/* Estilo para la cabecera */
+thead {
+    background-color: #007bff; /* Azul para la cabecera */
+    color: white;
+}
+
+thead td {
+    padding: 10px;
+    font-weight: bold;
+}
+
+/* Estilo para las celdas del cuerpo */
+tbody td {
+    padding: 10px;
+}
+
+/* Alternar colores en las filas */
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+/* Efecto hover */
+tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Estilo para los enlaces como botones */
+a {
+    display: inline-block;
+    padding: 8px 12px;
+    margin: 2px;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    background-color: #007bff; /* Azul para botones */
+    text-decoration: none;
+    border: 1px solid #0056b3;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+/* Hover para los botones */
+a:hover {
+    background-color: #0056b3;
+    border-color: #003d7a;
+}

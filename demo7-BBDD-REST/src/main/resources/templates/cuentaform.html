@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title th:text="${add} ? 'Nueva cuenta' : 'Actualizar cuenta'"></title>
+	<link th:href="@{/css/style.css}" rel="stylesheet" />
+</head>
+
+<body>
+	<h1 th:text="${add} ? 'Nueva cuenta' : 'Actualizar cuenta'" />
+	<br>
+	<br>
+	<form th:action="@{/clientes/{idCliente}/cuentas/save(idCliente=${cuentaDTO.clienteDTO.id})}" th:object="${cuentaDTO}" method="POST">
+		<table border="0">
+			<tr th:if="${cuentaDTO.id}">
+				<td>id</td>
+				<td>:</td>
+				<td> <input type="text" th:field="*{id}" readonly /> </td>
+			</tr>
+			<tr>
+				<td>Banco</td>
+				<td>:</td>
+				<td> <input type="number" th:field="*{banco}" /> </td>
+			</tr>
+			<tr>
+				<td>Sucursal</td>
+				<td>:</td>
+				<td> <input type="number" th:field="*{sucursal}" /> </td>
+			</tr>
+			<tr>
+				<td>dc</td>
+				<td>:</td>
+				<td> <input type="number" th:field="*{dc}" /> </td>
+			</tr>
+			<tr>
+				<td>numeroCuenta</td>
+				<td>:</td>
+				<td> <input type="number" th:field="*{numeroCuenta}" /> </td>
+			</tr>
+			<tr>
+				<td>Saldo</td>
+				<td>:</td>
+				<td> <input type="number" step="0.01" th:field="*{saldoActual}" /> </td>
+			</tr>
+		</table>
+		<input type="submit" th:value="${add} ? 'Nuevo' : 'Actualizar'" />
+	</form>
+	<!-- chequeamos si errorMessage no es nulo o no está vacio-->
+	<div th:if="${errorMessage}" th:text="${errorMessage}" class="error" />
+	<div class="divLinks"><a th:href="@{/clientes/{idCliente}/cuentas(idCliente=${cuentaDTO.clienteDTO.id})}">Volver a la lista de cuentas</a></div>
+</body>
+
+</html>

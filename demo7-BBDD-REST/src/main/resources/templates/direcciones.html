@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Mantenimiento de direcciones</title>
+	<meta charset="UTF-8">
+	<link th:href="@{/css/style.css}" rel="stylesheet" />
+</head>
+
+<body>
+	<h2>Visualizar direcciones</h2>
+	<h3 th:if="${listaClientesDireccionesDTO.isEmpty()}">El cliente <span th:text="${clienteDTO.nombre}"></span> no
+		dispone de direcciones</h3>
+	<div th:if="${!listaClientesDireccionesDTO.isEmpty()}">
+		<table border="1">
+			<caption>El cliente <span th:text="${clienteDTO.nombre}"></span> tiene estas direcciones</caption>
+			<thead>
+				<tr>
+					<td>Id</td>
+					<td>Direccion</td>
+					<td>País</td>
+					<td>CP</td>
+					<td>Fecha de alta</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="item : ${listaClientesDireccionesDTO}">
+					<td th:text="${item.direccionDTO.id}" />
+					<td th:text="${item.direccionDTO.descripcion}" />
+					<td th:text="${item.direccionDTO.pais}" />
+					<td th:text="${item.direccionDTO.cp}" />
+					<td th:text="${#dates.format(item.fechaalta, 'dd/MM/yyyy HH:mm')}" />
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<br>
+	<div class="divLinks">
+		<a th:href="@{/clientes/{idCliente}/direcciones/add(idCliente=${clienteDTO.id})}">Agregar direccion</a>
+		<a th:href="@{/clientes}">Volver a la lista de clientes</a>
+	</div>
+</body>
+
+</html>
